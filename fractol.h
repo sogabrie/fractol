@@ -67,4 +67,5 @@ int		deal_key(int key, t_param *ptr);
 
 int		ft_close(int key, t_param *ptr);
 
+void	creat_Burning(t_param *ptr);
 #endif
