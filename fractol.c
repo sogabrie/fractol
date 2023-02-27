@@ -38,8 +38,7 @@ int	main(int argc, char **argv)
 {
 	t_param	ptr;
 	if (inicalizacia_and_check(&ptr, argc, argv))
-		return (1);
-	//	return (get_instru_and_ret());
+		return (get_instru_and_ret());
 	ptr.mlx_ptr = mlx_init();
 	ptr.win_ptr = mlx_new_window(ptr.mlx_ptr, ptr.X, ptr.Y, "Window");
 	printf("main_2\n");

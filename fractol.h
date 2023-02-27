@@ -52,6 +52,7 @@ typedef struct s_param
 }			t_param;
 
 void	hooks(t_param *ptr);
+int	get_instru_and_ret();
 
 void	creat_fract(t_param *ptr);
 
