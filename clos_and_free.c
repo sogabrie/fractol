@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   clos_and_free.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/28 00:40:58 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 00:41:00 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int	free_mas(char ***mas)
@@ -23,7 +35,6 @@ int	ft_close(t_param *ptr)
 	mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 	mlx_destroy_image(ptr->mlx_ptr, ptr->img.img);
 	mlx_destroy_window(ptr->mlx_ptr, ptr->win_ptr);
-	//system("leaks fractol");
 	exit(0);
 	return (0);
 }

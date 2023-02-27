@@ -1,22 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/28 00:42:51 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 00:42:56 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include "mlx.h"
-#include <math.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include "mlx.h"
+# include <math.h>
 
-#define	Y_stan 500
-#define X_stand 500
-#define one_stand 100
-#define centerX_stand 2.0
-#define centerY_stand 2.0
-#define zoom_stand 200
-#define	Julian_X_stand -0.37
-#define	Julian_y_stand -0.612
+# define X_STAND		500
+# define Y_STAND		500
+# define ONE_STAND		100
+# define CENTERX_STAND	2.0
+# define CENTERY_STAND	2.0
+# define ZOOM_STAND		200
+# define JULIAN_X_STAND	-0.37
+# define JULIAN_Y_STAND	-0.612
 
 typedef struct s_color
 {
@@ -26,7 +37,8 @@ typedef struct s_color
 	int	b;
 }		t_color;
 
-typedef struct	s_data {
+typedef struct s_data
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -41,24 +53,24 @@ typedef struct s_param
 	void	*win_ptr;
 	t_data	img;
 	t_color	col;
-	double	X;
-	double	Y;
-	double	centerX;
-	double	centerY;
-	double	Julian_X;
-	double	Julian_Y;
+	double	x;
+	double	y;
+	double	center_x;
+	double	center_y;
+	double	julian_x;
+	double	julian_y;
 	double	one;
 	double	zoom;
 }			t_param;
 
 void	hooks(t_param *ptr);
-int	get_instru_and_ret();
+int		get_instru_and_ret(void);
 
 void	creat_fract(t_param *ptr);
 
-void	creat_Mandelbrot(t_param *ptr);
+void	creat_mandelbrot(t_param *ptr);
 
-void	creat_Julian(t_param *ptr);
+void	creat_julian(t_param *ptr);
 
 size_t	ft_strlen(const char *a );
 int		create_trgb(int t, int r, int g, int b);
@@ -68,9 +80,9 @@ int		deal_mous(int key, int x, int y, t_param *ptr);
 int		deal_key(int key, t_param *ptr);
 
 int		ft_close(t_param *ptr);
-int	free_mas(char ***mas);
+int		free_mas(char ***mas);
 
-void	creat_Burning(t_param *ptr);
+void	creat_burning(t_param *ptr);
 
 char	**ft_split(char const *s, char c);
 
@@ -80,6 +92,6 @@ int		check_arg_julian(double *jul, char *arg);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-int	ft_strcmp_new(const char *s1, const char *s2);
+int		ft_strcmp_new(const char *s1, const char *s2);
 
 #endif

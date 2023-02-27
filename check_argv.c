@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_argv.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/28 00:40:51 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 00:40:53 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_strlcpy_new(char *dest, char *src)
@@ -14,7 +26,7 @@ void	ft_strlcpy_new(char *dest, char *src)
 	i = 0;
 }
 
-int	ft_strncmp(char *s1,char *s2)
+int	ft_strncmp(char *s1, char *s2)
 {
 	size_t	s;
 
@@ -49,7 +61,8 @@ int	chek_args(t_param *ptr, int argc, char **argv)
 		return (1);
 	if (argc == 4)
 	{
-		if (check_arg_julian(&(ptr->Julian_X), argv[2]) || check_arg_julian(&(ptr->Julian_Y), argv[3]))
+		if (check_arg_julian(&(ptr->julian_x), argv[2]) \
+			|| check_arg_julian(&(ptr->julian_x), argv[3]))
 			return (1);
 	}
 	return (0);
