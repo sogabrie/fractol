@@ -36,7 +36,7 @@ typedef struct	s_data {
 
 typedef struct s_param
 {
-	char*	name;
+	char	name[20];
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_data	img;
@@ -46,7 +46,7 @@ typedef struct s_param
 	double	centerX;
 	double	centerY;
 	double	Julian_X;
-	double	Julian_y;
+	double	Julian_Y;
 	double	one;
 	double	zoom;
 }			t_param;
@@ -59,13 +59,26 @@ void	creat_Mandelbrot(t_param *ptr);
 
 void	creat_Julian(t_param *ptr);
 
+size_t	ft_strlen(const char *a );
 int		create_trgb(int t, int r, int g, int b);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 int		deal_mous(int key, int x, int y, t_param *ptr);
 int		deal_key(int key, t_param *ptr);
 
-int		ft_close(int key, t_param *ptr);
+int		ft_close(t_param *ptr);
+int	free_mas(char ***mas);
 
 void	creat_Burning(t_param *ptr);
+
+char	**ft_split(char const *s, char c);
+
+int		chek_args(t_param *ptr, int argc, char **argv);
+
+int		check_arg_julian(double *jul, char *arg);
+
+void	*ft_calloc(size_t nmemb, size_t size);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+int	ft_strcmp_new(const char *s1, const char *s2);
+
 #endif

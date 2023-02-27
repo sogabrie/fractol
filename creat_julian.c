@@ -10,11 +10,11 @@ int	creat_Julian_util(t_param *ptr, double i, double j)
 	m = 0;
 	cr = (i / (ptr->zoom));
 	ci = (j / (ptr->zoom));
-	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4)&& m  < 100)
+	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4)&& m  < 250)
 	{
 		cr2 = cr;
 		cr = pow(cr2, 2.0) - pow(ci, 2.0) + ptr->Julian_X;
-		ci = 2.0 * cr2 * ci  + ptr->Julian_y;
+		ci = 2.0 * cr2 * ci  + ptr->Julian_Y;
 				m++;
 	}
 	return (m);
