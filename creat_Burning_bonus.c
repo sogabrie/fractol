@@ -42,10 +42,10 @@ void	creat_burning(t_param *ptr)
 
 	i = -(ptr->x / ptr->center_x);
 	j = -(ptr->y / ptr->center_y);
-	while (i < ptr->x - fabs((ptr->x / ptr->center_x)))
+	while (i < ptr->x - fabsl((ptr->x / ptr->center_x)))
 	{
 		j = -(ptr->y / ptr->center_y);
-		while (j < ptr->y - fabs(ptr->y / ptr->center_y))
+		while (j < ptr->y - fabsl(ptr->y / ptr->center_y))
 		{
 			col = creat_burning_util(ptr, i, j) * 10;
 			my_mlx_pixel_put(&(ptr->img), \

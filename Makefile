@@ -7,7 +7,7 @@ OBJS			= $(SRCS:.c=.o)
 BONUS			= fractol_bonus.c hooks_do_bonus.c creat_Mandelbrot_bonus.c creat_julian_bonus.c \
 					creat_fract_bonus.c clos_and_free_bonus.c fractol_util_bonus.c creat_Burning_bonus.c \
 					check_arg_julian_bonus.c check_argv_bonus.c ft_split_bonus.c ft_libs_bonus.c \
-					get_instru_and_ret_bonus.c fractol_color_bonus.c
+					get_instru_and_ret_bonus.c fractol_color_bonus.c fractol_zoom_bonus.c
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 

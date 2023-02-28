@@ -55,8 +55,8 @@ typedef struct s_param
 	t_color	col;
 	double	x;
 	double	y;
-	double	center_x;
-	double	center_y;
+	double long	center_x;
+	double long	center_y;
 	double	julian_x;
 	double	julian_y;
 	double	one;
