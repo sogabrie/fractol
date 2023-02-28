@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 int	creat_burning_util(t_param *ptr, double i, double j)
 {
@@ -40,7 +40,6 @@ void	creat_burning(t_param *ptr)
 	double		j;
 	int			col;
 
-	printf("Mandelbrod_1\n");
 	i = -(ptr->x / ptr->center_x);
 	j = -(ptr->y / ptr->center_y);
 	while (i < ptr->x - fabs((ptr->x / ptr->center_x)))

@@ -45,10 +45,10 @@ void	creat_julian(t_param *ptr )
 		j = -(ptr->y / ptr->center_y);
 		while (j < ptr->y - fabs(ptr->y / ptr->center_y))
 		{
-			col = creat_julian_util(ptr, i, j) * 15;
+			col = creat_julian_util(ptr, i, j) * 10;
 			my_mlx_pixel_put(&(ptr->img), \
 			(ptr->x / ptr->center_x) + i, (ptr->y / ptr->center_y) + j, \
-			create_trgb(ptr->col.t, ptr->col.r, ptr->col.g + col, ptr->col.b));
+			create_trgb(ptr->col.t, ptr->col.r * (col / 9), ptr->col.g + col, ptr->col.b * (col /9)));
 			++j;
 		}
 		++i;

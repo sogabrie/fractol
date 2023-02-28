@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   creat_Mandelbrot.c                                 :+:      :+:    :+:   */
+/*   creat_Mandelbrot_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 00:42:10 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:42:11 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/28 15:23:25 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 15:23:28 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 int	creat_mandelbrot_util(t_param *ptr, double i, double j)
 {

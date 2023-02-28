@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_instru_and_ret.c                               :+:      :+:    :+:   */
+/*   get_instru_and_ret_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 00:43:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:43:24 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/28 15:35:35 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 15:35:36 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 int	get_instru_and_ret(void)
 {
 	write(1, "\nPlease use this commands\n", 26);
 	write(1, "--- Mandelbrod ---\n", 20);
 	write(1, "---   Julian   ---\n", 20);
+	write(1, "---   Burning  ---\n", 20);
 	write(1, "For Julian you can add parameters separated by ", 46);
 	write(1, "space !ONLY SPACE!\n", 20);
 	write(1, "For Example: 0.0 0.0 and -0.36 -0.66\n", 38);

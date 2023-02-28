@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clos_and_free.c                                    :+:      :+:    :+:   */
+/*   fractol_util_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 00:40:58 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:41:00 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/28 15:34:13 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 15:34:15 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
-int	free_mas(char ***mas)
+size_t	ft_strlen(const char *a )
 {
 	int	i;
 
 	i = 0;
-	if (*mas)
-		return (0);
-	while ((*mas)[i])
-	{
-		free((*mas)[i]);
-		(*mas)[i] = 0;
+	while (a[i] != 0)
 		++i;
-	}
-	(*mas) = 0;
-	return (0);
+	return (i);
 }
 
-int	ft_close(t_param *ptr)
+int	create_trgb(int t, int r, int g, int b)
 {
-	mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
-	mlx_destroy_image(ptr->mlx_ptr, ptr->img.img);
-	mlx_destroy_window(ptr->mlx_ptr, ptr->win_ptr);
-	exit(0);
-	return (0);
+	return (t << 24 | r << 16 | g << 8 | b);
+}
+
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }

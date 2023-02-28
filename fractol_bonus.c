@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractol_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 00:42:44 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:42:45 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/28 15:26:34 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 15:26:39 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 void	initalizatia_args(t_param *ptr)
 {
@@ -61,6 +61,5 @@ int	main(int argc, char **argv)
 	if (hooks(&ptr))
 		get_instru_and_ret();
 	ft_close(&ptr);
-	return (0);
 	return (0);
 }

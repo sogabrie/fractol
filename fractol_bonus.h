@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 00:42:51 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:42:56 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/28 15:26:44 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/28 15:26:49 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int		creat_fract(t_param *ptr);
 void	creat_mandelbrot(t_param *ptr);
 
 void	creat_julian(t_param *ptr);
+
+void	creat_burning(t_param *ptr);
 
 size_t	ft_strlen(const char *a );
 int		create_trgb(int t, int r, int g, int b);

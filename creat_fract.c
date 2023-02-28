@@ -12,12 +12,14 @@
 
 #include "fractol.h"
 
-void	creat_fract(t_param *ptr)
+int	creat_fract(t_param *ptr)
 {
-	printf("name = %s\n", ptr->name);
 	if (ft_strcmp_new(ptr->name, "mandelbrod"))
 		creat_mandelbrot(ptr);
 	else if (ft_strcmp_new(ptr->name, "julian"))
 		creat_julian(ptr);
+	else
+		return (1);
 	mlx_put_image_to_window(ptr->mlx_ptr, ptr->win_ptr, ptr->img.img, 0, 0);
+	return (0);
 }
