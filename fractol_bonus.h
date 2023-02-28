@@ -94,4 +94,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 int		ft_strcmp_new(const char *s1, const char *s2);
 
+void	color_do(t_param *par, int key);
+void	zoom_do(t_param *par, int key, int x, int y);
+
 #endif
