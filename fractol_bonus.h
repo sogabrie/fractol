@@ -20,8 +20,8 @@
 # include "mlx.h"
 # include <math.h>
 
-# define X_STAND		500
-# define Y_STAND		500
+# define X_STAND		500.0
+# define Y_STAND		500.0
 # define ONE_STAND		100
 # define CENTERX_STAND	2.0
 # define CENTERY_STAND	2.0
@@ -53,12 +53,12 @@ typedef struct s_param
 	void	*win_ptr;
 	t_data	img;
 	t_color	col;
-	double	x;
-	double	y;
-	double long	center_x;
-	double long	center_y;
-	double	julian_x;
-	double	julian_y;
+	double long	start_x;
+	double long	start_y;
+	double long	end_x;
+	double long	end_y;
+	double long	julian_x;
+	double long	julian_y;
 	double	one;
 	double	zoom;
 }			t_param;
@@ -68,11 +68,11 @@ int		get_instru_and_ret(void);
 
 int		creat_fract(t_param *ptr);
 
-void	creat_mandelbrot(t_param *ptr);
+void	creat_mandelbrot(t_param *ptr, int i, int y);
 
-void	creat_julian(t_param *ptr);
+void	creat_julian(t_param *ptr, int i, int y);
 
-void	creat_burning(t_param *ptr);
+void	creat_burning(t_param *ptr, int i, int y);
 
 size_t	ft_strlen(const char *a );
 int		create_trgb(int t, int r, int g, int b);

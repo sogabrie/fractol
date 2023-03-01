@@ -18,14 +18,30 @@ void	initalizatia_args(t_param *ptr)
 	ptr->col.r = 24;
 	ptr->col.g = 2;
 	ptr->col.b = 16;
-	ptr->x = X_STAND;
-	ptr->y = Y_STAND;
-	ptr->center_x = CENTERX_STAND;
-	ptr->center_y = CENTERY_STAND;
-	ptr->julian_x = JULIAN_X_STAND;
-	ptr->julian_y = JULIAN_Y_STAND;
+	// ptr->julian_x = JULIAN_X_STAND;
+	// ptr->julian_y = JULIAN_Y_STAND;
+	ptr->julian_x = -1.5;
+	ptr->julian_y = -1.5;
 	ptr->one = ONE_STAND;
 	ptr->zoom = ZOOM_STAND;
+}
+
+void	get_reng_fractol(t_param *para)
+{
+	if (ft_strcmp_new(para->name, "julian"))
+	{
+		para->start_x = -2.0;
+		para->end_x = 2.0;
+		para->start_y = -2.0;
+		para->end_y = para->start_y + (para->end_x - para->start_x) * Y_STAND / X_STAND;
+	}
+	else
+	{
+		para->start_x = -2.0;
+		para->end_x = 1.0;
+		para->end_y = -1.5;
+		para->start_y = para->end_y + (para->end_x - para->start_x) * Y_STAND / X_STAND;
+	}
 }
 
 int	inicalizacia_and_check(t_param *ptr, int argc, char **argv)
@@ -33,6 +49,7 @@ int	inicalizacia_and_check(t_param *ptr, int argc, char **argv)
 	initalizatia_args(ptr);
 	if (chek_args(ptr, argc, argv))
 		return (1);
+	get_reng_fractol(ptr);
 	return (0);
 }
 
@@ -54,8 +71,8 @@ int	main(int argc, char **argv)
 	if (inicalizacia_and_check(&ptr, argc, argv))
 		return (get_instru_and_ret());
 	ptr.mlx_ptr = mlx_init();
-	ptr.win_ptr = mlx_new_window(ptr.mlx_ptr, ptr.x, ptr.y, "Window");
-	ptr.img.img = mlx_new_image(ptr.mlx_ptr, ptr.x, ptr.y);
+	ptr.win_ptr = mlx_new_window(ptr.mlx_ptr, X_STAND, Y_STAND, "Window");
+	ptr.img.img = mlx_new_image(ptr.mlx_ptr, X_STAND, Y_STAND);
 	ptr.img.addr = mlx_get_data_addr(ptr.img.img, &(ptr.img.bits_per_pixel), \
 					&(ptr.img.line_length), &(ptr.img.endian));
 	if (hooks(&ptr))

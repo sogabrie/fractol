@@ -20,34 +20,36 @@ int	creat_mandelbrot_util(t_param *ptr, double i, double j)
 	int		m;
 
 	m = 0;
-	cr = (i / (ptr->zoom));
-	ci = (j / (ptr->zoom));
+	cr = 0;
+	ci = 0;
 	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4) && m < 100)
 	{
 		cr2 = cr;
-		cr = pow(cr2, 2.0) - pow(ci, 2.0) + (i / (ptr->zoom));
-		ci = 2.0 * cr2 * ci + (j / (ptr->zoom));
+		cr = pow(cr2, 2.0) - pow(ci, 2.0) + i;
+		ci = 2.0 * cr2 * ci + j;
 		m++;
 	}
 	return (m);
 }
 
-void	creat_mandelbrot(t_param *ptr)
+void	creat_mandelbrot(t_param *ptr, int i, int j)
 {
-	double		i;
-	double		j;
+	double long	x;
+	double long	y;
 	int			col;
 
-	i = -(ptr->x / ptr->center_x);
-	j = -(ptr->y / ptr->center_y);
-	while (i < ptr->x - fabsl((ptr->x / ptr->center_x)))
+	printf("x_start = %Lf x_end = %Lf \n", ptr->start_x, ptr->end_x);
+	printf("Y = %Lf Y = %Lf \n", ptr->start_y, ptr->end_y);
+	while (i < X_STAND)
 	{
-		j = -(ptr->y / ptr->center_y);
-		while (j < ptr->y - fabsl(ptr->y / ptr->center_y))
+		j = 0;
+		while (j < Y_STAND)
 		{
-			col = creat_mandelbrot_util(ptr, i, j) * 15;
-			my_mlx_pixel_put(&(ptr->img), \
-			(ptr->x / ptr->center_x) + i, (ptr->y / ptr->center_y) + j, \
+			x = ptr->start_x + (double)i * (ptr->end_x - ptr->start_x) / X_STAND;
+			y = ptr->end_y + (double)j * (ptr->start_y - ptr->end_y) / Y_STAND;
+
+			col = creat_mandelbrot_util(ptr, x, y) * 1;
+			my_mlx_pixel_put(&(ptr->img), i, j, \
 			create_trgb(ptr->col.t, ptr->col.r * (col / 13), ptr->col.g + col, ptr->col.b * (col / 13)));
 			++j;
 		}

@@ -20,8 +20,8 @@ int	creat_julian_util(t_param *ptr, double i, double j)
 	int		m;
 
 	m = 0;
-	cr = (i / (ptr->zoom));
-	ci = (j / (ptr->zoom));
+	cr = i;
+	ci = j;
 	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4) && m < 250)
 	{
 		cr2 = cr;
@@ -32,23 +32,22 @@ int	creat_julian_util(t_param *ptr, double i, double j)
 	return (m);
 }
 
-void	creat_julian(t_param *ptr )
+void	creat_julian(t_param *ptr, int i, int j)
 {
-	double	i;
-	double	j;
-	int		col;
+	double long	x;
+	double long	y;
+	int			col;
 
-	i = -(ptr->x / ptr->center_x);
-	j = -(ptr->y / ptr->center_y);
-	while (i < ptr->x - fabsl((ptr->x / ptr->center_x)))
+	while (i < X_STAND)
 	{
-		j = -(ptr->y / ptr->center_y);
-		while (j < ptr->y - fabsl(ptr->y / ptr->center_y))
+		j = 0;
+		while (j < Y_STAND)
 		{
-			col = creat_julian_util(ptr, i, j) * 10;
-			my_mlx_pixel_put(&(ptr->img), \
-			(ptr->x / ptr->center_x) + i, (ptr->y / ptr->center_y) + j, \
-			create_trgb(ptr->col.t, ptr->col.r * (col / 9), ptr->col.g + col, ptr->col.b * (col /9)));
+			x = ptr->start_x + (double)i * (ptr->end_x - ptr->start_x) / X_STAND;
+			y = ptr->end_y + (double)j * (ptr->start_y - ptr->end_y) / Y_STAND;
+			col = creat_julian_util(ptr, x, y) * 10;
+			my_mlx_pixel_put(&(ptr->img), i, j, \
+			create_trgb(ptr->col.t, ptr->col.r * (col / 9), ptr->col.g + col, ptr->col.b * (col / 9)));
 			++j;
 		}
 		++i;

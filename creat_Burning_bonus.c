@@ -27,30 +27,31 @@ int	creat_burning_util(t_param *ptr, double i, double j)
 		cr = fabs(cr);
 		ci = fabs(ci);
 		cr2 = cr;
-		cr = cr * cr - ci * ci + (i / (ptr->zoom));
-		ci = 2.0 * cr2 * ci + (j / (ptr->zoom));
+		cr = cr * cr - ci * ci + i;
+		ci = 2.0 * cr2 * ci + j;
 		m++;
 	}
 	return (m);
 }
 
-void	creat_burning(t_param *ptr)
+void	creat_burning(t_param *ptr, int i, int j)
 {
-	double		i;
-	double		j;
+	double long	x;
+	double long	y;
 	int			col;
 
-	i = -(ptr->x / ptr->center_x);
-	j = -(ptr->y / ptr->center_y);
-	while (i < ptr->x - fabsl((ptr->x / ptr->center_x)))
+	printf("x_start = %Lf x_end = %Lf \n", ptr->start_x, ptr->end_x);
+	printf("Y = %Lf Y = %Lf \n", ptr->start_y, ptr->end_y);
+	while (i < X_STAND)
 	{
-		j = -(ptr->y / ptr->center_y);
-		while (j < ptr->y - fabsl(ptr->y / ptr->center_y))
+		j = 0;
+		while (j < Y_STAND)
 		{
-			col = creat_burning_util(ptr, i, j) * 10;
-			my_mlx_pixel_put(&(ptr->img), \
-			(ptr->x / ptr->center_x) + i, (ptr->y / ptr->center_y) + j, \
-			create_trgb(ptr->col.t, ptr->col.r * (col / 9), ptr->col.g + col, ptr->col.b * (col /9)));
+			x = ptr->start_x + (double)i * (ptr->end_x - ptr->start_x) / X_STAND;
+			y = ptr->end_y + (double)j * (ptr->start_y - ptr->end_y) / Y_STAND;
+			col = creat_burning_util(ptr, x, y) * 15;
+			my_mlx_pixel_put(&(ptr->img), i, j, \
+			create_trgb(ptr->col.t, ptr->col.r * (col / 13), ptr->col.g + col, ptr->col.b * (col / 13)));
 			++j;
 		}
 		++i;
