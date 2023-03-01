@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg_julian_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:43:55 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 15:43:57 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:45:29 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,17 @@ int	check_arg_julian(double long *jul, char *arg)
 	char	**b;
 
 	b = ft_split(arg, ' ');
-	if (!b)
-		return (1);
+	if (!b || !b[0] || b[1] || check_b(b[0]))
+		return (free_mas(&b) || 1);
 	a = ft_split((b[0]), '.');
 	free_mas(&b);
 	if (!a)
 		return (1);
-	if (ft_strlen(a[1]) > 19)
-		return (free_mas(&b) || 1);
+	if (!a[1] || ft_strlen(a[1]) > 19)
+		return (free_mas(&a) || 1);
 	*jul = pars_dobl(a, 0, 0);
 	free_mas(&a);
+	if (*jul < -2.0 && *jul > 2.0)
+		return (1);
 	return (0);
 }

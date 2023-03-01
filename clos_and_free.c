@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clos_and_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:40:58 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:41:00 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:32:27 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	free_mas(char ***mas)
 	int	i;
 
 	i = 0;
-	if (*mas)
+	if (!(*mas))
 		return (0);
 	while ((*mas)[i])
 	{
@@ -25,6 +25,7 @@ int	free_mas(char ***mas)
 		(*mas)[i] = 0;
 		++i;
 	}
+	free(*mas);
 	(*mas) = 0;
 	return (0);
 }

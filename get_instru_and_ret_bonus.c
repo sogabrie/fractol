@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_instru_and_ret_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:35:35 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 15:35:36 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:36:51 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_instru_and_ret(void)
 	write(1, "For Julian you can add parameters separated by ", 46);
 	write(1, "space !ONLY SPACE!\n", 20);
 	write(1, "For Example: 0.0 0.0 and -0.36 -0.66\n", 38);
-	write(1, "In range of -2.0 to 2.0", 23);
+	write(1, "In range of -2.0 to 2.0\n", 24);
 	write(1, "Please enter numbers no longer than 18 characters\n", 50);
 	write(1, "!Please enter parameters correct in float type!\n", 49);
 	write(1, "-> THANK YOU <-\n\n", 18);

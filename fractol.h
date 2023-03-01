@@ -6,7 +6,7 @@
 /*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:42:51 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/03/01 16:36:15 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:15:36 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c);
 int		chek_args(t_param *ptr, int argc, char **argv);
 
 int		check_arg_julian(double *jul, char *arg);
+int		check_b(char *b);
+int		ft_isdigit(char a);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);

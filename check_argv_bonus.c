@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_argv_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:33:16 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 15:33:18 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:44:20 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,15 @@ int	chek_args(t_param *ptr, int argc, char **argv)
 	if (argc < 2 || argc > 4 || argc == 3)
 		return (1);
 	str_tolower(argv[1]);
-	if (ft_strncmp(argv[1], "mandelbrot") || ft_strncmp(argv[1], "julian"))
+	if (ft_strncmp(argv[1], "mandelbrot") || ft_strncmp(argv[1], "julian") || \
+		ft_strncmp(argv[1], "burning"))
 		ft_strlcpy_new(ptr->name, argv[1]);
 	else
 		return (1);
 	if (argc == 4)
 	{
 		if (check_arg_julian(&(ptr->julian_x), argv[2]) \
-			|| check_arg_julian(&(ptr->julian_x), argv[3]))
+			|| check_arg_julian(&(ptr->julian_y), argv[3]))
 			return (1);
 	}
 	return (0);

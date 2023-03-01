@@ -6,7 +6,7 @@
 /*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:42:44 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/03/01 17:06:52 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:32:38 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	ptr.img.img = mlx_new_image(ptr.mlx_ptr, ptr.x, ptr.y);
 	ptr.img.addr = mlx_get_data_addr(ptr.img.img, &(ptr.img.bits_per_pixel), \
 					&(ptr.img.line_length), &(ptr.img.endian));
+	system("leaks fractol");
 	if (hooks(&ptr))
 		get_instru_and_ret();
 	ft_close(&ptr);
