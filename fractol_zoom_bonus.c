@@ -72,9 +72,9 @@ void	zoom_do(t_param *par, int key, double long x, double long y)
 		else if (x > 0)
 			do_moov(par, x / X_STAND, 124);
 		if (y < 0)
-			do_moov(par, y * -1.0 / Y_STAND, 125);
+			do_moov(par, y * -1.0 / Y_STAND, 126);
 		else if (y > 0)
-			do_moov(par, y / Y_STAND, 126);
+			do_moov(par, y / Y_STAND, 125);
 	}
 	else if (key == 5)
 		zoom(par, 2.0);
