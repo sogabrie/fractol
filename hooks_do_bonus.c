@@ -6,7 +6,7 @@
 /*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:35:51 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/03/01 15:57:14 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:27:44 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	deal_mous(int key, int x, int y, t_param *ptr)
 {
-	if (key == 4 || key == 5 || key == 1 || key == 2)
+	if (key == 4 || key == 5)
 		zoom_do(ptr, key, (double long)x, (double long)y);
 	else
 		return (0);
