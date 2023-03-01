@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:42:51 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:42:56 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:36:15 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "mlx.h"
 # include <math.h>
+# include <mlx.h>
 
 # define X_STAND		500
 # define Y_STAND		500
-# define ONE_STAND		100
 # define CENTERX_STAND	2.0
 # define CENTERY_STAND	2.0
 # define ZOOM_STAND		100
@@ -59,7 +58,6 @@ typedef struct s_param
 	double	center_y;
 	double	julian_x;
 	double	julian_y;
-	double	one;
 	double	zoom;
 }			t_param;
 

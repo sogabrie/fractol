@@ -52,7 +52,7 @@ double	pars_dobl(char **mas, long long i, long long f)
 	return (b);
 }
 
-int	check_arg_julian(double *jul, char *arg)
+int	check_arg_julian(double long *jul, char *arg)
 {
 	char	**a;
 	char	**b;

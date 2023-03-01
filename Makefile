@@ -22,7 +22,8 @@ BONUS_NAME		= fractol_bonus
 all:			$(OBJS) $(NAME) fractol.h Makefile
 
 $(NAME):		$(OBJS) fractol.h Makefile
-				$(CC) $(CFLAGS) $(OBJS) libmlx.dylib -o $(NAME)
+				$(CC) $(CFLAGS) -I /usr/local/include $(OBJS) \
+				 -L /usr/local/lib/ -lmlx -framework OpenGl -framework AppKit -o $(NAME)
 
 $(OBJS):		fractol.h Makefile
 
@@ -47,6 +48,7 @@ re_bonus:		fclean_bonus $(BONUS_NAME)
 bonus:			$(BONUS_OBJS) $(BONUS_NAME) fractol_bonus.h Makefile
 
 $(BONUS_NAME):	$(BONUS_OBJS) fractol_bonus.h Makefile
-				$(CC) $(BONUS_OBJS) libmlx.dylib -o $(BONUS_NAME)
+				$(CC) $(CFLAGS) -I /usr/local/include $(BONUS_OBJS) \
+				-L /usr/local/lib/ -lmlx -framework OpenGl -framework AppKit -o $(BONUS_NAME)
 
 .PHONY:			all clean fclean re bonus clean_bonus fclean_bonus re_bonus

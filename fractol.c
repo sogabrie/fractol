@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:42:44 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:42:45 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:06:52 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	initalizatia_args(t_param *ptr)
 	ptr->center_y = CENTERY_STAND;
 	ptr->julian_x = JULIAN_X_STAND;
 	ptr->julian_y = JULIAN_Y_STAND;
-	ptr->one = ONE_STAND;
 	ptr->zoom = ZOOM_STAND;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   creat_Mandelbrot.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:42:10 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:42:11 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:11:28 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void	creat_mandelbrot(t_param *ptr)
 			col = creat_mandelbrot_util(ptr, i, j) * 15;
 			my_mlx_pixel_put(&(ptr->img), \
 			(ptr->x / ptr->center_x) + i, (ptr->y / ptr->center_y) + j, \
-			create_trgb(ptr->col.t, ptr->col.r * (col / 13), ptr->col.g + col, ptr->col.b * (col / 13)));
+			create_trgb(ptr->col.t, ptr->col.r, \
+			ptr->col.g + col, ptr->col.b));
 			++j;
 		}
 		++i;

@@ -3,29 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:26:44 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 15:26:49 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:06:57 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "mlx.h"
+# include <mlx.h>
 # include <math.h>
 
 # define X_STAND		500.0
 # define Y_STAND		500.0
-# define ONE_STAND		100
-# define CENTERX_STAND	2.0
-# define CENTERY_STAND	2.0
-# define ZOOM_STAND		100
 # define JULIAN_X_STAND	-0.37
 # define JULIAN_Y_STAND	-0.612
 
@@ -48,19 +44,17 @@ typedef struct s_data
 
 typedef struct s_param
 {
-	char	name[20];
-	void	*mlx_ptr;
-	void	*win_ptr;
-	t_data	img;
-	t_color	col;
+	char		name[20];
+	void		*mlx_ptr;
+	void		*win_ptr;
+	t_data		img;
+	t_color		col;
 	double long	start_x;
 	double long	start_y;
 	double long	end_x;
 	double long	end_y;
 	double long	julian_x;
 	double long	julian_y;
-	double	one;
-	double	zoom;
 }			t_param;
 
 int		hooks(t_param *ptr);
@@ -68,11 +62,11 @@ int		get_instru_and_ret(void);
 
 int		creat_fract(t_param *ptr);
 
-void	creat_mandelbrot(t_param *ptr, int i, int y);
+void	creat_mandelbrot(t_param *ptr, double long i, double long j);
 
-void	creat_julian(t_param *ptr, int i, int y);
+void	creat_julian(t_param *ptr, double long i, double long j);
 
-void	creat_burning(t_param *ptr, int i, int y);
+void	creat_burning(t_param *ptr, double long i, double long j);
 
 size_t	ft_strlen(const char *a );
 int		create_trgb(int t, int r, int g, int b);
@@ -88,13 +82,13 @@ char	**ft_split(char const *s, char c);
 
 int		chek_args(t_param *ptr, int argc, char **argv);
 
-int		check_arg_julian(double *jul, char *arg);
+int		check_arg_julian(double long *jul, char *arg);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 int		ft_strcmp_new(const char *s1, const char *s2);
 
 void	color_do(t_param *par, int key);
-void	zoom_do(t_param *par, int key, int x, int y);
+void	zoom_do(t_param *par, int key, double long x, double long y);
 
 #endif

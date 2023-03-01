@@ -14,22 +14,14 @@
 
 int	creat_fract(t_param *ptr)
 {
-	// if (ft_strcmp_new(ptr->name, "mandelbrod"))
-	// 	creat_mandelbrot(ptr, 0, 0);
-	// else if (ft_strcmp_new(ptr->name, "julian"))
-	// 	creat_julian(ptr, 0, 0);
-	// else if (ft_strcmp_new(ptr->name, "burning"))
-	// 	creat_burning(ptr, 0, 0);
-	// else
-	// 	return (1);
-	//mlx_put_image_to_window(ptr->mlx_ptr, ptr->win_ptr, ptr->img.img, 0, 0);
-	while (1)
-	{
-		printf("aaaaaaaaaaaaaaaaaa\n");
-		creat_julian(ptr, 0, 0);
-		mlx_put_image_to_window(ptr->mlx_ptr, ptr->win_ptr, ptr->img.img, 0, 0);
-		ptr->julian_x += 0.0001;
-		ptr->julian_y += 0.0001;
-	}
+	if (ft_strcmp_new(ptr->name, "mandelbrod"))
+		creat_mandelbrot(ptr, 0.0, 0.0);
+	else if (ft_strcmp_new(ptr->name, "julian"))
+		creat_julian(ptr, 0.0, 0.0);
+	else if (ft_strcmp_new(ptr->name, "burning"))
+		creat_burning(ptr, 0.0, 0.0);
+	else
+		return (1);
+	mlx_put_image_to_window(ptr->mlx_ptr, ptr->win_ptr, ptr->img.img, 0, 0);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks_do.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:43:39 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 00:43:41 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:57:10 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	deal_mous(int key, int x, int y, t_param *ptr)
 {
 	(void)x;
 	(void)y;
-	printf("mous key = %d\n", key);
 	if (key == 4)
 	{
 		ptr->zoom *= 1.5;
@@ -32,7 +31,6 @@ int	deal_mous(int key, int x, int y, t_param *ptr)
 
 int	deal_key(int key, t_param *ptr)
 {
-	printf("key key = %d\n", key);
 	if (key == 53)
 		ft_close(ptr);
 	if (key == 24)
