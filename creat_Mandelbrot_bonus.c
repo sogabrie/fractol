@@ -6,7 +6,7 @@
 /*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:23:25 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/03/01 17:13:05 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:48:23 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	creat_mandelbrot_util(double long i, double long j)
 	m = 0;
 	cr = 0;
 	ci = 0;
-	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4) && m < 250)
+	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4) && m < 100)
 	{
 		cr2 = cr;
 		cr = pow(cr2, 2.0) - pow(ci, 2.0) + i;
@@ -38,6 +38,7 @@ void	creat_mandelbrot(t_param *ptr, double long i, double long j)
 	double long	y;
 	int			col;
 
+	mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 	while (i < X_STAND)
 	{
 		j = 0;

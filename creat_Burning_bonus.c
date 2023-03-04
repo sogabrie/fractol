@@ -6,7 +6,7 @@
 /*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:41:11 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/03/01 15:57:19 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:43:04 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	creat_burning(t_param *ptr, double long i, double long j)
 	double long	y;
 	int			col;
 
+	mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 	while (i < X_STAND)
 	{
 		j = 0;

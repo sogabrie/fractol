@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_arg_julian_util.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/04 15:37:27 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/03/04 15:40:45 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int	check_sin(char *b)
@@ -23,7 +35,6 @@ int	check_b(char *b)
 	int	i;
 
 	i = 0;
-	printf("check_b_1\n");
 	while (b[i])
 	{
 		if (i == 0)
@@ -41,6 +52,5 @@ int	check_b(char *b)
 				return (1);
 		++i;
 	}
-	printf("check_b_10\n");
 	return (check_sin(b));
 }

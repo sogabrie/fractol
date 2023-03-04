@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   creat_julian_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:22:59 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/28 15:23:03 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:43:11 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	creat_julian_util(t_param *ptr, double i, double j)
 	m = 0;
 	cr = i;
 	ci = j;
-	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4) && m < 250)
+	while ((pow(cr, 2.0) + pow(ci, 2.0) <= 4) && m < 100)
 	{
 		cr2 = cr;
 		cr = pow(cr2, 2.0) - pow(ci, 2.0) + ptr->julian_x;
@@ -38,6 +38,7 @@ void	creat_julian(t_param *ptr, double long i, double long j)
 	double long	y;
 	int			col;
 
+	mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 	while (i < X_STAND)
 	{
 		j = 0;

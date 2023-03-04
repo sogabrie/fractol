@@ -6,7 +6,7 @@
 /*   By: sogabrie <sogabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:40:32 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/03/01 20:36:22 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:40:10 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ double	pars_dobl(char **mas, long long i, long long f)
 	b += a;
 	return (b);
 }
-
-
 
 int	check_arg_julian(double *jul, char *arg)
 {
